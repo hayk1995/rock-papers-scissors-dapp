@@ -1,7 +1,4 @@
-import cryptoRandomInt from 'crypto-random-int';
 import { utils } from 'ethers';
-
-export const getSalt = async () => cryptoRandomInt(0, 2 ** 32 - 1);
 
 export const storeValue = (key, value) => {
   localStorage.setItem(key, value);

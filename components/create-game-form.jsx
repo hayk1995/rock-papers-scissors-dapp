@@ -43,7 +43,7 @@ function CreateGameForm({ createGame }) {
   return (
     <Wrapper>
       <Form>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Group className="mb-3" controlId="formBasicSecondPlayerAddress">
           <Form.Label>Second player Address</Form.Label>
           <Form.Control
             type="text"
@@ -53,7 +53,7 @@ function CreateGameForm({ createGame }) {
             onChange={(e) => setValues({ ...values, address: e.target.value })}
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Group className="mb-3" controlId="formBasicStake">
           <Form.Label>Game stake</Form.Label>
           <Form.Control
             type="text"

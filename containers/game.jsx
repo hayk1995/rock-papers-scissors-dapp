@@ -44,7 +44,7 @@ export default function Game() {
         alert("you can't play with yourself");
         throw 'Trying to play with own self';
       }
-      const salt = await getSalt();
+      const salt = web3.utils.randomHex(32);
       const moveHash = solidityKeccak256(['uint8', 'uint256'], [move, salt]);
       const deployedGame = await deploy(abi, byteCode, [moveHash, secondPlayerAddress], stake);
       await storeGame(account, secondPlayerAddress, deployedGame.options.address);
@@ -66,7 +66,7 @@ export default function Game() {
   };
 
   const clearState = () => {
-    setGameStatus(GameStatus.Created);
+    setGameStatus(GameStatus.NotCreated);
     setGameContract(null);
     setGameState({});
   };
