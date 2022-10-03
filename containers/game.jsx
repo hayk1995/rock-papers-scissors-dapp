@@ -110,6 +110,7 @@ export default function Game() {
 
   const callOpponentTimeout = async () => {
     try {
+      setSendingTransaction(true);
       const methodName = equalsIgnoreCase(account, gameState.firstPlayerAddress) ? 'j2Timeout' : 'j1Timeout';
       await send(gameContract, methodName, []);
     } finally {
